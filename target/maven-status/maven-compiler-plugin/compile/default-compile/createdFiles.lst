@@ -1,0 +1,16 @@
+com/expdia/expdiatask/jackson/Hotel.class
+com/expdia/expdiatask/jackson/UserInfo.class
+com/expdia/expdiatask/jackson/HotelUrls.class
+com/expdia/expdiatask/jackson/RootJsonExpdia.class
+com/expdia/expdiatask/util/Utils.class
+com/expdia/expdiatask/jackson/HotelPricingInfo.class
+com/expdia/expdiatask/jackson/OfferDateRange.class
+com/expdia/expdiatask/controllers/HandlerSearchHotels.class
+com/expdia/expdiatask/jackson/OfferInfo.class
+com/expdia/expdiatask/jackson/HotelUrgencyInfo.class
+com/expdia/expdiatask/jackson/Persona.class
+com/expdia/expdiatask/jackson/Destination.class
+com/expdia/expdiatask/beans/RequestSearchBean.class
+com/expdia/expdiatask/jackson/HotelInfo.class
+com/expdia/expdiatask/jackson/Offers.class
+com/expdia/expdiatask/jackson/HotelScores.class
