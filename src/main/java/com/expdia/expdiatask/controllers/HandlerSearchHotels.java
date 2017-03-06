@@ -54,13 +54,19 @@ public class HandlerSearchHotels extends HttpServlet {
             ObjectMapper mapper = new ObjectMapper();
             RootJsonExpdia beanJsonExpdia = mapper.readValue(json, RootJsonExpdia.class);
             System.out.println("beanJsonExpdia : " + beanJsonExpdia);
-
-            request.setAttribute("beanJsonExpdia", beanJsonExpdia);
-            url = "pages/showdata.jsp";
+            System.out.println("beanJsonExpdia.getOffers() : " + beanJsonExpdia.getOffers());
+            
+            if (!beanJsonExpdia.getAdditionalProperties().isEmpty()) {
+                System.out.println("beanJsonExpdia : " + beanJsonExpdia);
+                request.setAttribute("beanJsonExpdia", beanJsonExpdia);
+                url = "pages/showdata.jsp";
+            }
         } catch (IOException e) {
             System.out.println("IO Exc : " + e);
+             url = "pages/error.jsp";
         } catch (ParseException ex) {
             System.out.println("ParseException : " + ex);
+             url = "pages/error.jsp";
         }
         System.out.println("URL : " + url);
 

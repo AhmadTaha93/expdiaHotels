@@ -12,7 +12,7 @@
 
         <style>
             body {
-                background:  url(../images/imgad.jpg) no-repeat center center fixed; 
+                background:  url(images/imgad.jpg) no-repeat center center fixed; 
                 background-size: cover;
             }
 
@@ -22,7 +22,7 @@
     </head>
     <body>
        <div class="col-lg-8  col-md-8 col-sm-8 col-centered" id="cont"> 
-           <a href="/expdiaTask/index.jsp">Return Search ----</a>
+           <a href="/index.jsp">Return Search ----</a>
        </div>
     </body>
 </html>
