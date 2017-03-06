@@ -50,23 +50,27 @@ public class HandlerSearchHotels extends HttpServlet {
         String url = "pages/error.jsp";
         try {
             RequestSearchBean beanRequest = Utils.getBeanRequest(request);
-            String json = Utils.httpCall(Utils.getURLExpdia(beanRequest,Utils.URL_EXPDIA));
+            String json = Utils.httpCall(Utils.getURLExpdia(beanRequest, Utils.URL_EXPDIA));
             ObjectMapper mapper = new ObjectMapper();
             RootJsonExpdia beanJsonExpdia = mapper.readValue(json, RootJsonExpdia.class);
             System.out.println("beanJsonExpdia : " + beanJsonExpdia);
             System.out.println("beanJsonExpdia.getOffers() : " + beanJsonExpdia.getOffers());
-            
-            if (!beanJsonExpdia.getAdditionalProperties().isEmpty()) {
-                System.out.println("beanJsonExpdia : " + beanJsonExpdia);
+            if (beanJsonExpdia.getOffers().getHotel() == null) {
+                System.out.println("no data ");
+                 url = "pages/error.jsp";
+               
+            } else {
+                System.out.println("contain data ");
                 request.setAttribute("beanJsonExpdia", beanJsonExpdia);
                 url = "pages/showdata.jsp";
             }
-        } catch (IOException e) {
+            
+           
+
+            System.out.println("beanJsonExpdia " + url);
+        } catch (Exception e) {
             System.out.println("IO Exc : " + e);
-             url = "pages/error.jsp";
-        } catch (ParseException ex) {
-            System.out.println("ParseException : " + ex);
-             url = "pages/error.jsp";
+            url = "pages/error.jsp";
         }
         System.out.println("URL : " + url);
 
